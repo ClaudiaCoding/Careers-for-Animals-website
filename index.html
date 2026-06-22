@@ -35,7 +35,8 @@
       color: inherit;
     }
 
-    img {
+    img,
+    svg {
       max-width: 100%;
       display: block;
     }
@@ -63,9 +64,14 @@
     }
 
     .logo {
-      font-weight: 700;
-      color: var(--green);
-      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      max-width: 220px;
+    }
+
+    .logo svg {
+      width: 100%;
+      height: auto;
     }
 
     .nav-links {
@@ -338,7 +344,69 @@
 <body>
   <header class="navbar">
     <div class="container nav-inner">
-      <div class="logo">Careers for Animals</div>
+      <div class="logo" aria-label="Careers for Animals logo">
+        <svg viewBox="0 0 980 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="980" height="320" fill="#F7F5EF"/>
+          <g transform="translate(36,26)">
+            <path
+              d="M78 218
+                 C103 201, 126 187, 148 177
+                 C171 166, 194 157, 214 143
+                 C233 130, 247 113, 255 91
+                 C262 71, 273 56, 290 47
+                 C309 37, 332 40, 349 52
+                 C364 63, 373 79, 374 96
+                 C375 113, 369 128, 357 140
+                 C347 151, 334 159, 319 163
+                 C333 168, 347 176, 359 188
+                 C371 199, 377 213, 376 227
+                 C375 243, 367 255, 353 263
+                 C337 272, 316 274, 293 270
+                 C266 265, 241 253, 217 238
+                 C197 225, 177 216, 157 214
+                 C130 212, 103 217, 78 218Z"
+              fill="#8FB996"/>
+            <path
+              d="M309 58
+                 C321 56, 333 60, 342 68
+                 C332 69, 323 74, 316 82
+                 C309 88, 304 96, 301 105
+                 C297 95, 297 83, 300 73
+                 C302 67, 305 62, 309 58Z"
+              fill="#F7F5EF"/>
+            <path
+              d="M233 162
+                 C251 151, 267 138, 277 120
+                 C287 102, 292 83, 295 66
+                 C298 77, 304 88, 313 96
+                 C321 103, 331 108, 341 111
+                 C336 120, 329 127, 320 133
+                 C311 138, 301 142, 291 145
+                 C302 150, 313 158, 321 168
+                 C306 165, 291 163, 276 162
+                 C262 161, 247 161, 233 162Z"
+              fill="#F7F5EF"/>
+          </g>
+          <g transform="translate(430,90)">
+            <text x="0" y="40"
+              fill="#5F8A63"
+              font-family="Inter, Manrope, 'Plus Jakarta Sans', 'DM Sans', Arial, sans-serif"
+              font-size="48"
+              font-weight="700"
+              letter-spacing="-0.6">
+              Careers
+            </text>
+            <text x="0" y="92"
+              fill="#5F8A63"
+              font-family="Inter, Manrope, 'Plus Jakarta Sans', 'DM Sans', Arial, sans-serif"
+              font-size="48"
+              font-weight="400"
+              letter-spacing="-0.4">
+              for Animals
+            </text>
+          </g>
+        </svg>
+      </div>
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#speakers">Speakers</a>
