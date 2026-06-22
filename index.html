@@ -233,6 +233,23 @@
       padding: 12px;
     }
 
+    .partner-logo-image {
+      background: transparent;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .partner-logo-image img {
+      max-height: 72px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
     .faq-item {
       border-bottom: 1px solid var(--border);
       padding: 18px 0;
@@ -572,9 +589,9 @@
 
         <h3 style="margin-bottom: 14px;">Partners</h3>
         <div class="partner-grid">
-         <div class="partner-logo">
-  <img src="images/EA.logo.jfif" alt="EA logo">
-</div>
+          <div class="partner-logo partner-logo-image">
+            <img src="images/EA.logo.jfif" alt="EA logo">
+          </div>
           <div class="partner-logo">Vegan Student Association</div>
           <div class="partner-logo">Studio Plantaardig</div>
         </div>
