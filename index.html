@@ -338,9 +338,16 @@
       }
 
       .card-grid,
-      .speaker-grid,
+      .speaker-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .team-grid {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .team-grid .team-card:last-child {
+        grid-column: 2 / 3;
       }
 
       .partner-grid {
@@ -616,11 +623,6 @@
             <div class="photo-lg"></div>
             <h3>Claudia Schenk</h3>
             <p>Event manager with a background in sustainable agriculture.</p>
-          </div>
-          <div class="card team-card">
-            <div class="photo-lg"></div>
-            <h3>Jos Veenhoven</h3>
-            <p>Graduate in climate physics; volunteer at Faunalytics, where he translates research into accessible writing for animal advocates.</p>
           </div>
           <div class="card team-card">
             <div class="photo-lg"></div>
