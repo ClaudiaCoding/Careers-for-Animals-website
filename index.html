@@ -501,8 +501,14 @@
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center;
       display: block;
       margin: 0 auto 0.75rem;
+    }
+
+    .team-photo.leon-photo {
+      object-position: center 25%;
+      transform: scale(1.2);
     }
 
     .partners-label {
@@ -692,6 +698,7 @@
       border-radius: var(--radius);
       padding: 1.25rem;
       text-align: center;
+      overflow: hidden;
     }
 
     .team-name { font-weight: 700; margin-bottom: 0.25rem; }
@@ -1277,7 +1284,7 @@
         <div class="team-bio">Founder of Effective Animal Advocacy Netherlands; event organiser and speaker on effective animal advocacy.</div>
       </div>
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Leon Borgdorf" class="team-photo" />
+        <img src="images/Leon.jpeg" alt="Leon Borgdorf" class="team-photo leon-photo" />
         <div class="team-name">Leon Borgdorf</div>
         <div class="team-bio">PhD researcher on ethics and genetic modification of farmed animals; co-host of the podcast Lettuce Talk; co-founder of the plant-based coffee petition at Utrecht University.</div>
       </div>
