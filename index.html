@@ -496,14 +496,20 @@
       line-height: 1.7;
     }
 
-    .team-photo {
+    .team-photo-wrap {
       width: 80px;
       height: 80px;
       border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.75rem;
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
-      margin: 0 auto 0.75rem;
     }
 
     .team-photo.claudia-photo {
@@ -1274,32 +1280,49 @@
 
     <div class="team-grid">
       <div class="team-card">
-        <img src="images/Claudia.JPEG" alt="Claudia Schenk" class="team-photo claudia-photo" />
+        <div class="team-photo-wrap">
+          <img src="images/Claudia.JPEG" alt="Claudia Schenk" class="team-photo claudia-photo" />
+        </div>
         <div class="team-name">Claudia Schenk</div>
         <div class="team-bio">Event manager with a background in sustainable agriculture.</div>
       </div>
+
       <div class="team-card">
-        <img src="images/Lotte.jfif" alt="Lotte de Lint" class="team-photo" />
+        <div class="team-photo-wrap">
+          <img src="images/Lotte.jfif" alt="Lotte de Lint" class="team-photo" />
+        </div>
         <div class="team-name">Lotte de Lint</div>
         <div class="team-bio">Fund manager for animal welfare and food transition at Doneer Effectief; PhD researcher on plant-based eating behaviour; co-founder EA student group Maastricht.</div>
       </div>
+
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Ruben van den Bulck" class="team-photo" />
+        <div class="team-photo-wrap">
+          <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Ruben van den Bulck" class="team-photo" />
+        </div>
         <div class="team-name">Ruben van den Bulck</div>
         <div class="team-bio">Founder of Effective Animal Advocacy Netherlands; event organiser and speaker on effective animal advocacy.</div>
       </div>
+
       <div class="team-card">
-        <img src="images/Leon.jpeg" alt="Leon Borgdorf" class="team-photo leon-photo" />
+        <div class="team-photo-wrap">
+          <img src="images/Leon.jpeg" alt="Leon Borgdorf" class="team-photo leon-photo" />
+        </div>
         <div class="team-name">Leon Borgdorf</div>
         <div class="team-bio">PhD researcher on ethics and genetic modification of farmed animals; co-host of the podcast Lettuce Talk; co-founder of the plant-based coffee petition at Utrecht University.</div>
       </div>
+
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Aiko Unterweger" class="team-photo" />
+        <div class="team-photo-wrap">
+          <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Aiko Unterweger" class="team-photo" />
+        </div>
         <div class="team-name">Aiko Unterweger</div>
         <div class="team-bio">PhD researcher on greenwashing and humane-washing; active in national animal activism.</div>
       </div>
+
       <div class="team-card">
-        <img src="images/Laura.jpg" alt="Laura Bindschedler" class="team-photo" />
+        <div class="team-photo-wrap">
+          <img src="images/Laura.jpg" alt="Laura Bindschedler" class="team-photo" />
+        </div>
         <div class="team-name">Laura Bindschedler</div>
         <div class="team-bio"></div>
       </div>
