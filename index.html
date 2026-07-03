@@ -25,7 +25,6 @@
       line-height: 1.65;
     }
 
-    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -77,7 +76,6 @@
 
     nav .btn-nav:hover { background: #1e4d38; }
 
-    /* HERO */
     #home {
       background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #52b788 100%);
       color: #fff;
@@ -171,7 +169,6 @@
       font-size: 0.85rem;
     }
 
-    /* HERO PHOTO STRIP */
     .hero-photos {
       display: flex;
       gap: 0.75rem;
@@ -190,7 +187,6 @@
       border: 2px solid rgba(255,255,255,0.2);
     }
 
-    /* PHOTO PLACEHOLDER (shown when src is missing) */
     .photo-placeholder {
       background: rgba(255,255,255,0.12);
       border: 2px dashed rgba(255,255,255,0.3);
@@ -204,14 +200,12 @@
       padding: 0.5rem;
     }
 
-    /* SHARED LAYOUT */
     section {
       padding: 4rem 2rem;
     }
 
     section:nth-child(even) { background: #f8fbf9; }
 
-    /* Override for special sections that set their own bg */
     #register, #home { background: unset; }
     #register { background: linear-gradient(135deg, #1b4332, #2d6a4f); }
     #home { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #52b788 100%); }
@@ -243,7 +237,6 @@
 
     p { margin-bottom: 1rem; }
 
-    /* SOCIAL PROOF STRIP */
     .proof-strip {
       background: var(--green-pale);
       border-radius: var(--radius);
@@ -284,7 +277,6 @@
       line-height: 1.6;
     }
 
-    /* EVENT FACTS */
     .facts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -314,7 +306,6 @@
       line-height: 1.4;
     }
 
-    /* PROGRAMME TIMELINE */
     .timeline {
       border-left: 3px solid var(--green-light);
       padding-left: 1.5rem;
@@ -346,7 +337,6 @@
     .tl-title { font-weight: 700; font-size: 1rem; }
     .tl-desc { font-size: 0.93rem; color: var(--muted); margin-top: 0.2rem; }
 
-    /* WHY ATTEND */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -364,7 +354,6 @@
       margin-bottom: 0.6rem;
     }
 
-    /* PHOTO GALLERY */
     .photo-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -388,7 +377,6 @@
       }
     }
 
-    /* KEYNOTE SPEAKER */
     .keynote-card {
       display: flex;
       gap: 2rem;
@@ -455,7 +443,6 @@
       line-height: 1.6;
     }
 
-    /* SPEAKER GRID */
     .speaker-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -489,7 +476,6 @@
 
     .tba .speaker-name { color: #999; font-style: italic; }
 
-    /* TEAM */
     .team-intro {
       font-size: 0.98rem;
       color: var(--muted);
@@ -514,7 +500,6 @@
     .team-name { font-weight: 700; margin-bottom: 0.25rem; }
     .team-bio { font-size: 0.88rem; color: var(--muted); }
 
-    /* PARTNERS */
     .partners {
       display: flex;
       align-items: center;
@@ -538,7 +523,6 @@
       margin-top: 2rem;
     }
 
-    /* FAQ */
     details {
       border-bottom: 1px solid #e5e5e5;
       padding: 1rem 0;
@@ -571,7 +555,6 @@
       font-size: 0.95rem;
     }
 
-    /* REGISTER CTA BANNER */
     #register {
       color: #fff;
       text-align: center;
@@ -599,7 +582,6 @@
 
     .price-tag strong { display: block; font-size: 1.3rem; }
 
-    /* CONTACT */
     .contact-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -608,7 +590,6 @@
 
     @media (max-width: 600px) { .contact-row { grid-template-columns: 1fr; } }
 
-    /* MOBILE */
     @media (max-width: 640px) {
       nav ul { display: none; }
 
@@ -675,7 +656,6 @@
       cursor: pointer;
     }
 
-    /* FOOTER */
     footer {
       background: #111;
       color: #aaa;
@@ -689,7 +669,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="brand" href="#home">Careers for Animals</a>
   <ul>
@@ -703,7 +682,6 @@
   <a class="btn-nav" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener">Register now</a>
 </nav>
 
-<!-- HERO -->
 <section id="home">
   <p class="hero-meta">Utrecht · October 10th, 2026 · 12:30 to 18:00</p>
   <h1>Your career is one of the <em>most powerful ways</em> to help animals</h1>
@@ -721,10 +699,8 @@
     <span class="speaker-chip">Policy &amp; systems change</span>
     <span class="speaker-chip">Entrepreneurship</span>
   </div>
-
 </section>
 
-<!-- PHOTO PAIR: animal + event, right below the hero banner -->
 <div class="photo-pair" style="display: flex; gap: 0; max-height: 340px; overflow: hidden;">
   <img
     src="https://i.imgur.com/dMe5MK2.jpg"
@@ -736,7 +712,6 @@
     style="width: 50%; object-fit: cover;" />
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="inner">
     <h2>About the event</h2>
@@ -744,7 +719,6 @@
       Over a lifetime, you will spend roughly 80,000 hours working. Directing even a fraction of those hours toward animals can add up to an enormous positive impact. Careers for Animals is designed to kickstart that kind of career, helping you discover how your unique background and skillset can do the most good for animals.
     </p>
 
-    <!-- 2025 social proof -->
     <div class="proof-strip">
       <div class="proof-stats">
         <div class="proof-stat">
@@ -782,7 +756,6 @@
   </div>
 </section>
 
-<!-- PROGRAMME -->
 <section id="programme">
   <div class="inner">
     <h2>Programme</h2>
@@ -825,7 +798,6 @@
   </div>
 </section>
 
-<!-- PHOTO PAIR -->
 <div class="photo-pair" style="display: flex; gap: 0; max-height: 340px; overflow: hidden;">
   <img
     src="https://i.imgur.com/vqEsCC2.jpg"
@@ -837,7 +809,6 @@
     style="width: 50%; object-fit: cover;" />
 </div>
 
-<!-- MODAL OVERLAY -->
 <div id="speaker-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; align-items:center; justify-content:center; padding:1rem;">
   <div style="background:#fff; border-radius:12px; max-width:480px; width:100%; padding:2rem; position:relative; max-height:90vh; overflow-y:auto;">
     <button onclick="closeModal()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#555;">&times;</button>
@@ -849,15 +820,12 @@
   </div>
 </div>
 
-<!-- SPEAKERS -->
 <section id="speakers">
   <div class="inner">
     <h2>Speakers</h2>
     <p class="section-lead">Speakers from across the animal advocacy and food system landscape. Click any card to learn more.</p>
 
     <div class="speaker-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
-
-      <!-- Lauren Mee — keynote, full card, not a popup -->
       <div class="speaker-card" style="border-color: var(--green-light); border-width: 2px; cursor:pointer;" onclick="openModal('Lauren Mee','Keynote speaker','Founder and CEO, Animal Advocacy Careers and Impactful Policy Careers','Lauren is the Founder and CEO of Animal Advocacy Careers and Impactful Policy Careers, the former incubated by the Ambitious Impact incubator in 2019. She founded AAC after years of trying to find a job that matched her skills, experience, and ambition for impact, and now spends her time helping hundreds of others find opportunities where their skills can help the most animals. Before AAC, she worked as a consultant at a global data intelligence company, helping FMCG businesses make data-informed decisions and building bespoke market entry and expansion projects. She also serves on the boards of The Mission Motor, Consultants for Impact, and The Animal Law Foundation.','https://i.imgur.com/yh0dI1g.jpg')">
         <div class="speaker-photo-wrap">
           <img src="https://i.imgur.com/yh0dI1g.jpg" alt="Lauren Mee" class="speaker-photo" />
@@ -868,7 +836,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Thijs Jacobs -->
       <div class="speaker-card clickable" onclick="openModal('Thijs Jacobs','Effective giving','Data analyst and policy advisor, Dutch Ministry of Education','Thijs is a data analyst and policy advisor at the Dutch Ministry of Education, where he focuses on teacher shortages. He has a background in mathematics and previously worked as a non-profit strategy consultant. He recently completed a research fellowship on animal welfare and global health charity evaluation at Ambitious Impact, and has organised for the Dutch Effective Altruism policy community. During his studies, his path took in grassroots climate activism, NGO volunteering, and plenty of hitchhiking.','https://i.imgur.com/vNNRDo3.jpg')">
         <div class="speaker-photo-wrap">
           <img src="https://i.imgur.com/vNNRDo3.jpg" alt="Thijs Jacobs" class="speaker-photo" />
@@ -879,7 +846,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Speaker 2 -->
       <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Policy and public affairs','To be announced','This speaker works at the intersection of government, public affairs, and large-scale food sector change. More details coming soon.','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
@@ -890,7 +856,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Speaker 3 -->
       <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Research and innovation','To be announced','This speaker works in alternative proteins, animal-free testing, or food system research. More details coming soon.','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
@@ -901,7 +866,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Speaker 4 -->
       <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Corporate engagement','To be announced','This speaker works with supermarkets, foodservice, and industry to shift defaults at scale. More details coming soon.','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
@@ -912,7 +876,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Speaker 5 -->
       <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Entrepreneurship','To be announced','This speaker founded or built a venture in the food transition space. More details coming soon.','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
@@ -923,7 +886,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Speaker 6 -->
       <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Communications','To be announced','This speaker works in campaigns, advocacy, and changing hearts and minds at scale. More details coming soon.','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
@@ -934,7 +896,6 @@
         <div class="speaker-more">Read more</div>
       </div>
 
-      <!-- Speaker 7 -->
       <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Volunteering','To be announced','This speaker demonstrates how to create meaningful impact for animals outside of a paid role. More details coming soon.','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
@@ -944,26 +905,24 @@
         <div class="speaker-desc">Creating meaningful impact for animals outside of a paid role.</div>
         <div class="speaker-more">Read more</div>
       </div>
-
     </div>
 
     <p style="color: var(--muted); font-size: 0.92rem; margin-top: 1.5rem;">More speakers will be announced in the coming weeks.</p>
   </div>
 </section>
 
-<!-- HOST -->
 <section id="host">
   <div class="inner">
     <h2>Host</h2>
     <p class="section-lead">Our host for the event.</p>
 
     <div class="speaker-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
-      <div class="speaker-card clickable" onclick="openModal('Sther Molenwijk','Host','Creator of Studio Plantaardig (Studio Plant-Based)','Sther Molenwijk is the creator of the podcast Studio Plantaardig (Studio Plant-Based). After years of working as a sustainability consultant, she saw that the shift to a plant-based menu has enormous potential to solve many of the world&apos;s problems - and she decided to focus solely on that from then on. In Studio Plantaardig, she interviews farmers, activists, scientists, policymakers, and the meat industry itself on the question: &quot;how do we make plant-based the new normal?&quot;','')">
+      <div class="speaker-card clickable" onclick="openModal('Esther Molenwijk','Host','Creator of Studio Plantaardig (Studio Plant-Based)','Esther Molenwijk is the creator of the podcast Studio Plantaardig (Studio Plant-Based). After years of working as a sustainability consultant, she saw that the shift to a plant-based menu has enormous potential to solve many of the world&apos;s problems - and she decided to focus solely on that from then on. In Studio Plantaardig, she interviews farmers, activists, scientists, policymakers, and the meat industry itself on the question: &quot;how do we make plant-based the new normal?&quot;','')">
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
         </div>
         <div class="speaker-track">Host</div>
-        <div class="speaker-name">Sther Molenwijk</div>
+        <div class="speaker-name">Esther Molenwijk</div>
         <div class="speaker-desc">Creator of the podcast Studio Plantaardig (Studio Plant-Based).</div>
         <div class="speaker-more">Read more</div>
       </div>
@@ -971,7 +930,6 @@
   </div>
 </section>
 
-<!-- WHY ATTEND -->
 <section id="why">
   <div class="inner">
     <h2>Why attend</h2>
@@ -987,7 +945,6 @@
         <p>Already working, but want to do more for animals and the food system? We help you think through how to put the skills you already have to work for animals.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1065,7 +1022,6 @@
   });
 </script>
 
-<!-- REGISTER CTA -->
 <section id="register">
   <div class="inner">
     <h2>Ready to join us?</h2>
@@ -1074,7 +1030,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="inner">
     <h2>FAQ</h2>
@@ -1117,7 +1072,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="inner">
     <h2>Contact</h2>
@@ -1143,7 +1097,6 @@
   </div>
 </section>
 
-<!-- TEAM -->
 <section id="team">
   <div class="inner">
     <h2>Organisation team</h2>
@@ -1185,7 +1138,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>Careers for Animals · Utrecht · October 10th, 2026 · <a href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener">Register on Eventbrite</a></p>
 </footer>
