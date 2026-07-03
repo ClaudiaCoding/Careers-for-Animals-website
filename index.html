@@ -368,6 +368,200 @@
       border-radius: var(--radius);
     }
 
+    .photo-pair {
+      display: flex;
+      gap: 0;
+      max-height: 340px;
+      overflow: hidden;
+    }
+
+    .photo-pair img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .about-quote {
+      border-left: 3px solid var(--green-light);
+      padding-left: 1.25rem;
+      margin: 0 0 2rem;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--green);
+      line-height: 1.7;
+    }
+
+    .about-quote cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .about-event-image {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 0.5rem;
+      max-height: 380px;
+      object-fit: cover;
+    }
+
+    .speaker-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .speaker-modal.open {
+      display: flex;
+    }
+
+    .speaker-modal-panel {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 480px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .speaker-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .modal-photo-wrap {
+      margin-bottom: 1rem;
+    }
+
+    .modal-track {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #2d6a4f;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.15rem;
+    }
+
+    .modal-title {
+      font-size: 0.92rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .modal-bio {
+      font-size: 0.93rem;
+      color: #333;
+      line-height: 1.65;
+    }
+
+    .speaker-grid-compact {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .speaker-card-featured {
+      border-color: var(--green-light);
+      border-width: 2px;
+    }
+
+    .speaker-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 1.5rem;
+    }
+
+    .programme-summary {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .team-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 0.75rem;
+    }
+
+    .partners-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .faq-register-link {
+      color: var(--green);
+    }
+
+    .speaker-photo-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.75rem;
+    }
+
+    .speaker-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .speaker-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: #e8f4ee;
+      border: 2px dashed #b7ddc8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #aaa;
+    }
+
+    .speaker-card.clickable {
+      cursor: pointer;
+    }
+
+    .speaker-card.clickable:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .speaker-more {
+      font-size: 0.78rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-top: 0.5rem;
+      text-decoration: underline;
+    }
+
     @media (max-width: 500px) {
       .photo-gallery {
         grid-template-columns: 1fr;
@@ -455,6 +649,9 @@
       border-radius: var(--radius);
       padding: 1.25rem;
       background: #fff;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.15s, box-shadow 0.15s;
     }
 
     .speaker-track {
@@ -512,15 +709,6 @@
       height: 42px;
       object-fit: contain;
       filter: grayscale(0.2);
-    }
-
-    .partners-label {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-      margin-top: 2rem;
     }
 
     details {
@@ -701,15 +889,13 @@
   </div>
 </section>
 
-<div class="photo-pair" style="display: flex; gap: 0; max-height: 340px; overflow: hidden;">
+<div class="photo-pair">
   <img
     src="https://i.imgur.com/dMe5MK2.jpg"
-    alt="Piglets"
-    style="width: 50%; object-fit: cover;" />
+    alt="Piglets" />
   <img
     src="https://i.imgur.com/njZvhWE.jpg"
-    alt="Audience at Careers for Animals 2025"
-    style="width: 50%; object-fit: cover;" />
+    alt="Audience at Careers for Animals 2025" />
 </div>
 
 <section id="about">
@@ -732,12 +918,12 @@
       </div>
     </div>
 
-    <blockquote style="border-left: 3px solid var(--green-light); padding-left: 1.25rem; margin: 0 0 2rem; font-style: italic; font-size: 1rem; color: var(--green); line-height: 1.7;">
+    <blockquote class="about-quote">
       "The event was an eye-opener for me. It's giving me hope and the courage to actually dive deeper into a career that makes me happy and has more impact."
-      <cite style="display: block; font-style: normal; font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem;">2025 attendee</cite>
+      <cite>2025 attendee</cite>
     </blockquote>
 
-    <img src="https://i.imgur.com/jzB4ArP.jpg" alt="Careers for Animals 2025 event" style="width:100%; border-radius: var(--radius); margin-top: 0.5rem; max-height: 380px; object-fit: cover;" />
+    <img src="https://i.imgur.com/jzB4ArP.jpg" alt="Careers for Animals 2025 event" class="about-event-image" />
 
     <div class="facts-grid">
       <div class="fact-card">
@@ -794,29 +980,27 @@
       </div>
     </div>
 
-    <p style="margin-top: 2rem; font-size: 1rem; color: var(--muted); line-height: 1.7;">By the end of the afternoon, you will have a clearer picture of the roles and careers that can help animals and accelerate the protein transition, along with concrete next steps toward a career that makes a real difference.</p>
+    <p class="programme-summary">By the end of the afternoon, you will have a clearer picture of the roles and careers that can help animals and accelerate the protein transition, along with concrete next steps toward a career that makes a real difference.</p>
   </div>
 </section>
 
-<div class="photo-pair" style="display: flex; gap: 0; max-height: 340px; overflow: hidden;">
+<div class="photo-pair">
   <img
     src="https://i.imgur.com/vqEsCC2.jpg"
-    alt="Careers for Animals"
-    style="width: 50%; object-fit: cover;" />
+    alt="Careers for Animals" />
   <img
     src="https://i.imgur.com/icjEhe0.jpg"
-    alt="Careers for Animals"
-    style="width: 50%; object-fit: cover;" />
+    alt="Careers for Animals" />
 </div>
 
-<div id="speaker-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; align-items:center; justify-content:center; padding:1rem;">
-  <div style="background:#fff; border-radius:12px; max-width:480px; width:100%; padding:2rem; position:relative; max-height:90vh; overflow-y:auto;">
-    <button onclick="closeModal()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#555;">&times;</button>
-    <div id="modal-photo-wrap" style="margin-bottom:1rem;"></div>
-    <div id="modal-track" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#2d6a4f; margin-bottom:0.25rem;"></div>
-    <div id="modal-name" style="font-size:1.4rem; font-weight:800; margin-bottom:0.15rem;"></div>
-    <div id="modal-title" style="font-size:0.92rem; color:#555; margin-bottom:1rem;"></div>
-    <div id="modal-bio" style="font-size:0.93rem; color:#333; line-height:1.65;"></div>
+<div id="speaker-modal" class="speaker-modal">
+  <div class="speaker-modal-panel">
+    <button onclick="closeModal()" class="speaker-modal-close">&times;</button>
+    <div id="modal-photo-wrap" class="modal-photo-wrap"></div>
+    <div id="modal-track" class="modal-track"></div>
+    <div id="modal-name" class="modal-name"></div>
+    <div id="modal-title" class="modal-title"></div>
+    <div id="modal-bio" class="modal-bio"></div>
   </div>
 </div>
 
@@ -825,8 +1009,8 @@
     <h2>Speakers</h2>
     <p class="section-lead">Speakers from across the animal advocacy and food system landscape. Click any card to learn more.</p>
 
-    <div class="speaker-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
-      <div class="speaker-card" style="border-color: var(--green-light); border-width: 2px; cursor:pointer;" onclick="openModal('Lauren Mee','Keynote speaker','Founder and CEO, Animal Advocacy Careers and Impactful Policy Careers','Lauren is the Founder and CEO of Animal Advocacy Careers and Impactful Policy Careers, the former incubated by the Ambitious Impact incubator in 2019. She founded AAC after years of trying to find a job that matched her skills, experience, and ambition for impact, and now spends her time helping hundreds of others find opportunities where their skills can help the most animals. Before AAC, she worked as a consultant at a global data intelligence company, helping FMCG businesses make data-informed decisions and building bespoke market entry and expansion projects. She also serves on the boards of The Mission Motor, Consultants for Impact, and The Animal Law Foundation.','https://i.imgur.com/yh0dI1g.jpg')">
+    <div class="speaker-grid speaker-grid-compact">
+      <div class="speaker-card speaker-card-featured clickable" onclick="openModal('Lauren Mee','Keynote speaker','Founder and CEO, Animal Advocacy Careers and Impactful Policy Careers','Lauren is the Founder and CEO of Animal Advocacy Careers and Impactful Policy Careers, the former incubated by the Ambitious Impact incubator in 2019. She founded AAC after years of trying to find a job that matched her skills, experience, and ambition for impact, and now spends her time helping hundreds of others find opportunities where their skills can help the most animals. Before AAC, she worked as a consultant at a global data intelligence company, helping FMCG businesses make data-informed decisions and building bespoke market entry and expansion projects. She also serves on the boards of The Mission Motor, Consultants for Impact, and The Animal Law Foundation.','https://i.imgur.com/yh0dI1g.jpg')">
         <div class="speaker-photo-wrap">
           <img src="https://i.imgur.com/yh0dI1g.jpg" alt="Lauren Mee" class="speaker-photo" />
         </div>
@@ -907,7 +1091,7 @@
       </div>
     </div>
 
-    <p style="color: var(--muted); font-size: 0.92rem; margin-top: 1.5rem;">More speakers will be announced in the coming weeks.</p>
+    <p class="speaker-note">More speakers will be announced in the coming weeks.</p>
   </div>
 </section>
 
@@ -916,7 +1100,7 @@
     <h2>Host</h2>
     <p class="section-lead">Our host for the event.</p>
 
-    <div class="speaker-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+    <div class="speaker-grid speaker-grid-compact">
       <div
         class="speaker-card clickable"
         data-name="Esther Molenwijk"
@@ -955,56 +1139,6 @@
   </div>
 </section>
 
-<style>
-  .speaker-photo-wrap {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 0.75rem;
-  }
-  .speaker-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .speaker-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    background: #e8f4ee;
-    border: 2px dashed #b7ddc8;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: #aaa;
-  }
-  .speaker-card {
-    text-align: center;
-    cursor: default;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .speaker-card.clickable, .speaker-card[onclick] {
-    cursor: pointer;
-  }
-  .speaker-card[onclick]:hover,
-  .speaker-card[data-name]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  }
-  .speaker-more {
-    font-size: 0.78rem;
-    color: var(--green);
-    font-weight: 600;
-    margin-top: 0.5rem;
-    text-decoration: underline;
-  }
-  #speaker-modal.open {
-    display: flex !important;
-  }
-</style>
-
 <script>
   function openModal(name, track, title, bio, photoUrl) {
     document.getElementById('modal-name').textContent = name;
@@ -1018,12 +1152,12 @@
       photoWrap.innerHTML = '<div style="width:100px;height:100px;border-radius:50%;background:#e8f4ee;border:3px dashed #b7ddc8;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#aaa;">📷</div>';
     }
     const modal = document.getElementById('speaker-modal');
-    modal.style.display = 'flex';
+    modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
-    document.getElementById('speaker-modal').style.display = 'none';
+    document.getElementById('speaker-modal').classList.remove('open');
     document.body.style.overflow = '';
   }
 
@@ -1084,7 +1218,7 @@
 
     <details>
       <summary>How do I register?</summary>
-      <p>Click the <a href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener" style="color: var(--green);">Register now button</a> to go directly to Eventbrite and complete your registration.</p>
+      <p>Click the <a href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener" class="faq-register-link">Register now button</a> to go directly to Eventbrite and complete your registration.</p>
     </details>
 
     <details>
@@ -1125,27 +1259,27 @@
 
     <div class="team-grid">
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Claudia Schenk" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Claudia Schenk" class="team-photo" />
         <div class="team-name">Claudia Schenk</div>
         <div class="team-bio">Event manager with a background in sustainable agriculture.</div>
       </div>
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Lotte de Lint" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Lotte de Lint" class="team-photo" />
         <div class="team-name">Lotte de Lint</div>
         <div class="team-bio">Fund manager for animal welfare and food transition at Doneer Effectief; PhD researcher on plant-based eating behaviour; co-founder EA student group Maastricht.</div>
       </div>
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Ruben van den Bulck" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Ruben van den Bulck" class="team-photo" />
         <div class="team-name">Ruben van den Bulck</div>
         <div class="team-bio">Founder of Effective Animal Advocacy Netherlands; event organiser and speaker on effective animal advocacy.</div>
       </div>
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Leon Borgdorf" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Leon Borgdorf" class="team-photo" />
         <div class="team-name">Leon Borgdorf</div>
         <div class="team-bio">PhD researcher on ethics and genetic modification of farmed animals; co-host of the podcast Lettuce Talk; co-founder of the plant-based coffee petition at Utrecht University.</div>
       </div>
       <div class="team-card">
-        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Aiko Unterweger" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Aiko Unterweger" class="team-photo" />
         <div class="team-name">Aiko Unterweger</div>
         <div class="team-bio">PhD researcher on greenwashing and humane-washing; active in national animal activism.</div>
       </div>
