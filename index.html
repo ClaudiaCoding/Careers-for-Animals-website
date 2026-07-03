@@ -917,7 +917,14 @@
     <p class="section-lead">Our host for the event.</p>
 
     <div class="speaker-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
-      <div class="speaker-card clickable" onclick="openModal('Esther Molenwijk','Host','Creator of Studio Plantaardig (Studio Plant-Based)','Esther Molenwijk is the creator of the podcast Studio Plantaardig (Studio Plant-Based). After years of working as a sustainability consultant, she saw that the shift to a plant-based menu has enormous potential to solve many of the world&apos;s problems - and she decided to focus solely on that from then on. In Studio Plantaardig, she interviews farmers, activists, scientists, policymakers, and the meat industry itself on the question: &quot;how do we make plant-based the new normal?&quot;','')">
+      <div
+        class="speaker-card clickable"
+        data-name="Esther Molenwijk"
+        data-track="Host"
+        data-title="Creator of Studio Plantaardig (Studio Plant-Based)"
+        data-bio="Esther Molenwijk is the creator of the podcast Studio Plantaardig (Studio Plant-Based). After years of working as a sustainability consultant, she saw that the shift to a plant-based menu has enormous potential to solve many of the world's problems - and she decided to focus solely on that from then on. In Studio Plantaardig, she interviews farmers, activists, scientists, policymakers, and the meat industry itself on the question: &quot;how do we make plant-based the new normal?&quot;"
+        data-photo=""
+      >
         <div class="speaker-photo-wrap">
           <div class="speaker-photo-placeholder">?</div>
         </div>
@@ -981,7 +988,8 @@
   .speaker-card.clickable, .speaker-card[onclick] {
     cursor: pointer;
   }
-  .speaker-card[onclick]:hover {
+  .speaker-card[onclick]:hover,
+  .speaker-card[data-name]:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
@@ -1013,12 +1021,26 @@
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
+
   function closeModal() {
     document.getElementById('speaker-modal').style.display = 'none';
     document.body.style.overflow = '';
   }
+
   document.getElementById('speaker-modal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
+  });
+
+  document.querySelectorAll('#host .speaker-card.clickable[data-name]').forEach(function(card) {
+    card.addEventListener('click', function() {
+      openModal(
+        card.dataset.name,
+        card.dataset.track,
+        card.dataset.title,
+        card.dataset.bio,
+        card.dataset.photo
+      );
+    });
   });
 </script>
 
