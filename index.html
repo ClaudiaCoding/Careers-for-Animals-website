@@ -6,716 +6,1153 @@
   <title>Careers for Animals</title>
   <style>
     :root {
-      --green: #2F5D50;
-      --green-soft: #DDE9E2;
-      --beige: #F5EFE6;
-      --white: #FFFFFF;
-      --text: #1F2A24;
-      --muted: #5F6C65;
-      --border: #E6E0D7;
-      --max-width: 1120px;
-      --radius: 18px;
+      --green: #2d6a4f;
+      --green-light: #52b788;
+      --green-pale: #d8f3dc;
+      --text: #1b1b1b;
+      --muted: #555;
+      --bg: #fff;
+      --radius: 8px;
+      --max: 860px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: Inter, system-ui, sans-serif;
+      font-family: 'Segoe UI', system-ui, sans-serif;
       color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
+      background: var(--bg);
+      line-height: 1.65;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img,
-    svg {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: 0 auto;
-    }
-
-    .navbar {
+    /* NAV */
+    nav {
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #f0ece5;
-      z-index: 100;
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      gap: 16px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      max-width: 220px;
-    }
-
-    .logo svg {
-      width: 100%;
-      height: auto;
-    }
-
-    .nav-links {
-      display: none;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: 0.2s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.92;
-    }
-
-    .btn-secondary {
-      background: var(--beige);
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 56px 0 32px;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: var(--green-soft);
-      color: var(--green);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
-
-    h1 {
-      font-size: clamp(2.3rem, 6vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 640px;
-      margin-bottom: 24px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-visual {
-      background: linear-gradient(135deg, var(--green-soft), var(--beige));
-      border-radius: 28px;
-      padding: 20px;
-      min-height: 320px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
-    .speaker-placeholder {
-      background: rgba(255,255,255,0.85);
-      border-radius: 18px;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-self: start;
-      min-height: 140px;
-      border: 1px solid rgba(255,255,255,0.6);
-    }
-
-    .speaker-photo {
-      height: 80px;
-      border-radius: 12px;
-      background: #bdd3c8;
-      margin-bottom: 12px;
-    }
-
-    section {
-      padding: 56px 0;
-    }
-
-    .section-title {
-      font-size: 1.9rem;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .info-grid,
-    .card-grid,
-    .speaker-grid,
-    .team-grid,
-    .partner-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .card {
       background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-    }
-
-    .speaker-card .photo-lg,
-    .team-card .photo-lg {
-      width: 100%;
-      height: 220px;
-      background: var(--green-soft);
-      border-radius: 14px;
-      margin-bottom: 14px;
-    }
-
-    .partner-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .partner-logo {
-      height: 120px;
-      border-radius: 14px;
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 16px;
+      justify-content: space-between;
+      padding: 0.75rem 2rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    .partner-logo-image {
-      background: transparent;
+    nav .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--green);
+      text-decoration: none;
     }
 
-    .partner-logo-image img {
-      max-height: 88px;
-      max-width: 100%;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .partner-logo-ea img {
-      max-height: 132px;
-    }
-
-    .partner-logo-vsa img {
-      max-height: 108px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0;
-    }
-
-    .faq-item h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .faq-item p {
+    nav ul a {
+      text-decoration: none;
       color: var(--muted);
+      font-size: 0.92rem;
+      transition: color 0.15s;
     }
 
-    .cta-block {
-      background: linear-gradient(135deg, var(--beige), #faf7f2);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 32px;
+    nav ul a:hover { color: var(--green); }
+
+    nav .btn-nav {
+      background: var(--green);
+      color: #fff;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    nav .btn-nav:hover { background: #1e4d38; }
+
+    /* HERO */
+    #home {
+      background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #52b788 100%);
+      color: #fff;
+      padding: 5rem 2rem 4rem;
       text-align: center;
     }
 
-    .cta-block p {
+    .hero-meta {
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    #home h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.2;
+      max-width: 740px;
+      margin: 0 auto 1.25rem;
+    }
+
+    #home h1 em {
+      font-style: normal;
+      color: #b7e4c7;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--green);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.15s, color 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--green-pale); }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius);
+      border: 2px solid rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.15s, background 0.15s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    .ticket-note {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-speakers {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .speaker-chip {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    /* HERO PHOTO STRIP */
+    .hero-photos {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      padding: 0 1rem;
+    }
+
+    .hero-photos img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      opacity: 0.85;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    /* PHOTO PLACEHOLDER (shown when src is missing) */
+    .photo-placeholder {
+      background: rgba(255,255,255,0.12);
+      border: 2px dashed rgba(255,255,255,0.3);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* SHARED LAYOUT */
+    section {
+      padding: 4rem 2rem;
+    }
+
+    section:nth-child(even) { background: #f8fbf9; }
+
+    /* Override for special sections that set their own bg */
+    #register, #home { background: unset; }
+    #register { background: linear-gradient(135deg, #1b4332, #2d6a4f); }
+    #home { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #52b788 100%); }
+
+    .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
       color: var(--muted);
+      margin-bottom: 2.5rem;
       max-width: 640px;
-      margin: 12px auto 20px;
     }
 
-    .contact-form {
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    p { margin-bottom: 1rem; }
+
+    /* SOCIAL PROOF STRIP */
+    .proof-strip {
+      background: var(--green-pale);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .proof-stats {
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+
+    .proof-stat {
+      text-align: center;
+      flex: 1;
+    }
+
+    .proof-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .proof-label {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .proof-quote {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--green);
+      border-left: 3px solid var(--green-light);
+      padding-left: 1rem;
+      line-height: 1.6;
+    }
+
+    /* EVENT FACTS */
+    .facts-grid {
       display: grid;
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
     }
 
-    input, textarea {
+    .fact-card {
+      background: var(--green-pale);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .fact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .fact-value {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* PROGRAMME TIMELINE */
+    .timeline {
+      border-left: 3px solid var(--green-light);
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .tl-item { position: relative; }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -1.85rem;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .tl-time {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.04em;
+    }
+
+    .tl-title { font-weight: 700; font-size: 1rem; }
+    .tl-desc { font-size: 0.93rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* WHY ATTEND */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      border: 1px solid #e0ece5;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* PHOTO GALLERY */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .photo-gallery img {
       width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      font: inherit;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius);
     }
 
-    textarea {
-      min-height: 140px;
-      resize: vertical;
+    @media (max-width: 500px) {
+      .photo-gallery {
+        grid-template-columns: 1fr;
+      }
+      .photo-gallery img {
+        height: 220px;
+      }
     }
 
-    .small-note {
+    /* KEYNOTE SPEAKER */
+    .keynote-card {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      background: #fff;
+      border: 2px solid var(--green-light);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .keynote-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #e8f4ee;
+      border: 3px solid var(--green-light);
+    }
+
+    .keynote-photo-placeholder {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: #e8f4ee;
+      border: 3px dashed #b7ddc8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .keynote-info { flex: 1; min-width: 200px; }
+
+    .keynote-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+
+    .keynote-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .keynote-title {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .keynote-bio {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* SPEAKER GRID */
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .speaker-card {
+      border: 1px solid #e0ece5;
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      background: #fff;
+    }
+
+    .speaker-track {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--green);
+      margin-bottom: 0.3rem;
+    }
+
+    .speaker-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .speaker-desc { font-size: 0.88rem; color: var(--muted); }
+
+    .tba {
+      background: #f6f6f6;
+      border-color: #e0e0e0;
+    }
+
+    .tba .speaker-name { color: #999; font-style: italic; }
+
+    /* TEAM */
+    .team-intro {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 640px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .team-card {
+      border: 1px solid #e0ece5;
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .team-name { font-weight: 700; margin-bottom: 0.25rem; }
+    .team-bio { font-size: 0.88rem; color: var(--muted); }
+
+    /* PARTNERS */
+    .partners {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .partners img {
+      height: 42px;
+      object-fit: contain;
+      filter: grayscale(0.2);
+    }
+
+    .partners-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    /* FAQ */
+    details {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1rem 0;
+    }
+
+    details summary {
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    details[open] summary::after { content: '-'; }
+
+    details p {
+      margin-top: 0.75rem;
       color: var(--muted);
       font-size: 0.95rem;
-      margin-top: 12px;
     }
 
+    /* REGISTER CTA BANNER */
+    #register {
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #register h2 { color: #fff; font-size: 2rem; margin-bottom: 0.75rem; }
+    #register p { opacity: 0.85; margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+    .price-tags {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+
+    .price-tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .price-tag strong { display: block; font-size: 1.3rem; }
+
+    /* CONTACT */
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 600px) { .contact-row { grid-template-columns: 1fr; } }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+
+      #home { padding: 3rem 1.25rem 2.5rem; }
+      #home h1 { font-size: 1.75rem; }
+      .hero-sub { font-size: 0.98rem; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-speakers { gap: 0.5rem; }
+      .speaker-chip { font-size: 0.78rem; padding: 0.35rem 0.75rem; }
+
+      .photo-pair { flex-direction: column !important; max-height: none !important; }
+      .photo-pair img { width: 100% !important; height: 220px; }
+
+      .proof-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
+      .proof-stat { width: 100%; }
+      .proof-number { font-size: 3rem; }
+      .proof-label { font-size: 1rem; }
+
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+
+      .cards-grid { grid-template-columns: 1fr; }
+
+      section { padding: 2.5rem 1.25rem; }
+
+      .keynote-card { flex-direction: column; align-items: center; text-align: center; }
+      .keynote-photo-placeholder { margin: 0 auto; }
+
+      .speaker-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+
+      h2 { font-size: 1.4rem; }
+    }
+
+    .contact-info p { font-size: 0.95rem; color: var(--muted); }
+    .contact-info a { color: var(--green); font-weight: 600; }
+
+    form label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      margin-bottom: 1rem;
+    }
+
+    form textarea { resize: vertical; min-height: 110px; }
+
+    form button {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.65rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
     footer {
-      padding: 32px 0 48px;
-      border-top: 1px solid #f0ece5;
-      color: var(--muted);
-      font-size: 0.95rem;
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.85rem;
     }
 
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-
-      .hero {
-        padding: 84px 0 44px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1.2fr 1fr;
-      }
-
-      .info-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .card-grid,
-      .speaker-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .team-grid .team-card:last-child {
-        grid-column: 2 / 3;
-      }
-
-      .partner-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
+    footer a { color: #ccc; }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container nav-inner">
-      <div class="logo" aria-label="Careers for Animals logo">
-        <svg viewBox="0 0 980 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="980" height="320" fill="#F7F5EF"/>
-          <g transform="translate(36,26)">
-            <path
-              d="M78 218
-                 C103 201, 126 187, 148 177
-                 C171 166, 194 157, 214 143
-                 C233 130, 247 113, 255 91
-                 C262 71, 273 56, 290 47
-                 C309 37, 332 40, 349 52
-                 C364 63, 373 79, 374 96
-                 C375 113, 369 128, 357 140
-                 C347 151, 334 159, 319 163
-                 C333 168, 347 176, 359 188
-                 C371 199, 377 213, 376 227
-                 C375 243, 367 255, 353 263
-                 C337 272, 316 274, 293 270
-                 C266 265, 241 253, 217 238
-                 C197 225, 177 216, 157 214
-                 C130 212, 103 217, 78 218Z"
-              fill="#8FB996"/>
-            <path
-              d="M309 58
-                 C321 56, 333 60, 342 68
-                 C332 69, 323 74, 316 82
-                 C309 88, 304 96, 301 105
-                 C297 95, 297 83, 300 73
-                 C302 67, 305 62, 309 58Z"
-              fill="#F7F5EF"/>
-            <path
-              d="M233 162
-                 C251 151, 267 138, 277 120
-                 C287 102, 292 83, 295 66
-                 C298 77, 304 88, 313 96
-                 C321 103, 331 108, 341 111
-                 C336 120, 329 127, 320 133
-                 C311 138, 301 142, 291 145
-                 C302 150, 313 158, 321 168
-                 C306 165, 291 163, 276 162
-                 C262 161, 247 161, 233 162Z"
-              fill="#F7F5EF"/>
-          </g>
-          <g transform="translate(430,90)">
-            <text x="0" y="40"
-              fill="#5F8A63"
-              font-family="Inter, Manrope, 'Plus Jakarta Sans', 'DM Sans', Arial, sans-serif"
-              font-size="48"
-              font-weight="700"
-              letter-spacing="-0.6">
-              Careers
-            </text>
-            <text x="0" y="92"
-              fill="#5F8A63"
-              font-family="Inter, Manrope, 'Plus Jakarta Sans', 'DM Sans', Arial, sans-serif"
-              font-size="48"
-              font-weight="400"
-              letter-spacing="-0.4">
-              for Animals
-            </text>
-          </g>
-        </svg>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="#home">Careers for Animals</a>
+  <ul>
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#why">Why attend</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn-nav" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener">Register now</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <p class="hero-meta">Utrecht · October 10, 2026 · 12:30 to 18:00</p>
+  <h1>Your career is one of the <em>most powerful ways</em> to help animals</h1>
+  <p class="hero-sub">
+    Careers for Animals is an event for students and professionals who want to discover how their work can help animals and accelerate the plant-based transition.
+  </p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener">Get your ticket</a>
+    <a class="btn-secondary" href="#programme">Discover the programme</a>
+  </div>
+  <p class="ticket-note">Students €10 · Professionals €20 · Limited capacity</p>
+
+  <div class="hero-speakers">
+    <span class="speaker-chip">Research &amp; innovation</span>
+    <span class="speaker-chip">Policy &amp; systems change</span>
+    <span class="speaker-chip">Entrepreneurship</span>
+  </div>
+
+</section>
+
+<!-- PHOTO PAIR: animal + event, right below the hero banner -->
+<div class="photo-pair" style="display: flex; gap: 0; max-height: 340px; overflow: hidden;">
+  <img
+    src="https://i.imgur.com/dMe5MK2.jpg"
+    alt="Piglets"
+    style="width: 50%; object-fit: cover;" />
+  <img
+    src="https://i.imgur.com/njZvhWE.jpg"
+    alt="Audience at Careers for Animals 2025"
+    style="width: 50%; object-fit: cover;" />
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <h2>About the event</h2>
+    <p class="section-lead">
+      Over a lifetime, you will spend roughly 80,000 hours working. Directing even a fraction of those hours toward animals can add up to an enormous positive impact. Careers for Animals is designed to kickstart that kind of career, helping you discover how your unique background and skillset can do the most good for animals.
+    </p>
+
+    <!-- 2025 social proof -->
+    <div class="proof-strip">
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <div class="proof-number">70+</div>
+          <div class="proof-label">attendees in 2025</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-number">8.4</div>
+          <div class="proof-label">average rating from 2025 attendees</div>
+        </div>
       </div>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#speakers">Speakers</a>
-        <a href="#about">About</a>
-        <a href="#team">Organisation Team</a>
-        <a href="#contact">Contact</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-primary" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true">Register now</a>
-      </nav>
     </div>
-  </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">In person · Utrecht · October 10th · 13:00 - 17:00</span>
-          <h1>Build a career that helps animals</h1>
-          <p>
-            Careers for Animals is an event for students, young professionals, and career changers who want to increase their impact for animals, the protein transition, and the wider food transition. Through keynote talks, short speaker sessions, workshops, office hours, and networking, the event helps participants discover effective career paths, connect with professionals in the field, and identify concrete next steps. After a strong first edition in 2025, the 2026 event aims to reach 100–200 attendees and offer a more ambitious, high-quality programme in Utrecht. The goal is to show that the biggest difference for animals may come not only from what we eat, but from how we choose to spend our working lives.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true">Register now</a>
-            <a class="btn btn-secondary" href="#speakers">See speakers</a>
-          </div>
-        </div>
+    <blockquote style="border-left: 3px solid var(--green-light); padding-left: 1.25rem; margin: 0 0 2rem; font-style: italic; font-size: 1rem; color: var(--green); line-height: 1.7;">
+      "The event was an eye-opener for me. It's giving me hope and the courage to actually dive deeper into a career that makes me happy and has more impact."
+      <cite style="display: block; font-style: normal; font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem;">2025 attendee</cite>
+    </blockquote>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="speaker-placeholder">
-            <div class="speaker-photo"></div>
-            <strong>Keynote speaker</strong>
-            <span>To be announced</span>
-          </div>
-          <div class="speaker-placeholder">
-            <div class="speaker-photo"></div>
-            <strong>Policy / public affairs</strong>
-            <span>Speaker to be announced</span>
-          </div>
-          <div class="speaker-placeholder">
-            <div class="speaker-photo"></div>
-            <strong>Research / innovation</strong>
-            <span>Speaker to be announced</span>
-          </div>
-          <div class="speaker-placeholder">
-            <div class="speaker-photo"></div>
-            <strong>Entrepreneurship / industry</strong>
-            <span>Speaker to be announced</span>
-          </div>
-        </div>
+    <img src="https://i.imgur.com/jzB4ArP.jpg" alt="Careers for Animals 2025 event" style="width:100%; border-radius: var(--radius); margin-top: 0.5rem; max-height: 380px; object-fit: cover;" />
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="inner">
+    <h2>Programme</h2>
+    <p class="section-lead">The afternoon introduces you to a wide range of career paths for helping animals and accelerating the protein transition. You will hear talks from people already building such careers, explore a career and initiatives fair, and join a workshop to map out your own next steps.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">12:30</div>
+        <div class="tl-title">Doors open</div>
+        <div class="tl-desc"></div>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="section-title">Event overview</h2>
-        <p class="section-subtitle">
-          Most people’s involvement in the protein transition stops at what they put on their plate. Careers for Animals is about the bigger opportunity: using your working life to create meaningful change for animals and food systems.
-        </p>
-
-        <div class="info-grid">
-          <div class="card">
-            <h3>Date</h3>
-            <p>October 10th, 13:00 - 17:00</p>
-          </div>
-          <div class="card">
-            <h3>Location</h3>
-            <p>De zalen van Zeven<br>Boothstraat 7, 3512 BT Utrecht</p>
-          </div>
-          <div class="card">
-            <h3>Format</h3>
-            <p>In-person talks, workshop, office hours, and networking drinks</p>
-          </div>
-          <div class="card">
-            <h3>Audience</h3>
-            <p>Students, recent graduates, early-career professionals, and career changers</p>
-          </div>
-        </div>
+      <div class="tl-item">
+        <div class="tl-title">Keynote: How to effectively help animals with your career</div>
+        <div class="tl-desc">Lauren Mee, Founder and CEO of Animal Advocacy Careers, sets the stage: how should you think about your impact for animals, and what does an effective career in this space actually look like?</div>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="section-title">Why attend</h2>
-        <p class="section-subtitle">
-          This event is designed to help ambitious people move from general concern for animals to concrete, high-impact action.
-        </p>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3>Explore real career paths</h3>
-            <p>Learn how people contribute to animal welfare, the protein transition, and food system change through policy, research, communications, corporate engagement, volunteering, and entrepreneurship.</p>
-          </div>
-          <div class="card">
-            <h3>Meet people doing the work</h3>
-            <p>Hear directly from professionals already working in the field and get practical insight into what roles exist, what skills matter, and where talent is most needed.</p>
-          </div>
-          <div class="card">
-            <h3>Leave with next steps</h3>
-            <p>Translate your interests, background, and career stage into specific follow-up actions, whether that means applying for roles, volunteering, donating effectively, or starting your own project.</p>
-          </div>
-        </div>
+      <div class="tl-item">
+        <div class="tl-title">Speaker sessions across 8 tracks</div>
+        <div class="tl-desc">Short, focused talks from professionals working across policy, research, corporate engagement, communications, volunteering, and entrepreneurship.</div>
       </div>
-    </section>
-
-    <section id="speakers">
-      <div class="container">
-        <h2 class="section-title">Speakers</h2>
-        <p class="section-subtitle">
-          The programme will combine a keynote on the landscape of animal welfare and the protein transition with around eight shorter talks from speakers across policy, research, communication, corporate engagement, volunteering, and entrepreneurship.
-        </p>
-
-        <div class="speaker-grid">
-          <div class="card speaker-card">
-            <div class="photo-lg"></div>
-            <h3>Keynote speaker</h3>
-            <p>Planned keynote examples include internationally recognized voices in animal advocacy and protein transition.</p>
-          </div>
-          <div class="card speaker-card">
-            <div class="photo-lg"></div>
-            <h3>Research & innovation</h3>
-            <p>Speakers from areas such as alternative proteins, animal-free testing, and food system innovation.</p>
-          </div>
-          <div class="card speaker-card">
-            <div class="photo-lg"></div>
-            <h3>Policy & systems change</h3>
-            <p>Professionals working in government, public affairs, supermarkets, foodservice, and other sectors that can accelerate transition at scale.</p>
-          </div>
-        </div>
-
-        <p class="small-note">
-          More speakers will be announced soon.
-        </p>
+      <div class="tl-item">
+        <div class="tl-title">Career and opportunities fair</div>
+        <div class="tl-desc">A chance to dive deeper, ask the speakers your follow-up questions, and explore other organisations and initiatives working to help animals and accelerate the protein transition.</div>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <p class="section-subtitle">
-          Careers for Animals is designed to help people think seriously about how their working lives can contribute to meaningful progress for animals, the protein transition, and the wider food transition.
-        </p>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3>Why this event exists</h3>
-            <p>People often think about helping animals through diet choices alone. But a career spans roughly 80,000 hours. Using those hours well can create far greater impact.</p>
-          </div>
-          <div class="card">
-            <h3>What participants gain</h3>
-            <p>Clarity on effective career options, concrete next steps, and stronger connection to like-minded peers and professionals already active in the field.</p>
-          </div>
-          <div class="card">
-            <h3>Why now</h3>
-            <p>After a strong first edition in 2025, the 2026 event aims to grow to 100–200 attendees and offer a more ambitious, high-quality programme in Utrecht.</p>
-          </div>
-        </div>
+      <div class="tl-item">
+        <div class="tl-title">Workshop: From ideas to action</div>
+        <div class="tl-desc">A guided session to help you turn the day's insights into concrete next steps for your career.</div>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta-block">
-          <h2 class="section-title">Ready to join us?</h2>
-          <p>
-            If you want to build a career that creates meaningful impact for animals, this event is designed to help you find direction, community, and concrete next steps.
-          </p>
-          <a class="btn btn-primary" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true">Register now</a>
-        </div>
+      <div class="tl-item">
+        <div class="tl-title">Networking drinks</div>
+        <div class="tl-desc">One-on-one time with speakers and fellow attendees. Ask the questions you didn't get to in the room, exchange contacts, and leave with a plan.</div>
       </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">
-          Questions, partnership inquiries, speaker suggestions, or accessibility requests? We’d love to hear from you.
-        </p>
-
-        <form class="contact-form" action="https://formspree.io/f/mqevplyw" method="POST">
-          <input type="hidden" name="_subject" value="New Careers for Animals contact form submission">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Your email" required />
-          <input type="text" name="subject" placeholder="Subject" />
-          <textarea name="message" placeholder="Your message" required></textarea>
-          <button class="btn btn-primary" type="submit">Send message</button>
-        </form>
+      <div class="tl-item">
+        <div class="tl-time">18:00</div>
+        <div class="tl-title">End of programme</div>
+        <div class="tl-desc"></div>
       </div>
-    </section>
-
-    <section id="team">
-      <div class="container">
-        <h2 class="section-title">Organisation Team</h2>
-        <p class="section-subtitle">
-          The organizing team consists of seven enthusiastic animal advocates with extensive experience in event organization and a strong network in the animal welfare space. The organizers come from diverse backgrounds and bring different professional and community networks. This year, we are already collaborating with Effective Altruism Netherlands, the Vegan Student Association, and Studio Plantaardig.
-        </p>
-
-        <div class="team-grid">
-          <div class="card team-card">
-            <div class="photo-lg"></div>
-            <h3>Claudia Schenk</h3>
-            <p>Event manager with a background in sustainable agriculture.</p>
-          </div>
-          <div class="card team-card">
-            <div class="photo-lg"></div>
-            <h3>Lotte de Lint</h3>
-            <p>Fund manager for animal welfare and food transition at Doneer Effectief, and PhD researcher on plant-based eating behavior; previously founded the Effective Altruism student group in Maastricht.</p>
-          </div>
-          <div class="card team-card">
-            <div class="photo-lg"></div>
-            <h3>Ruben van den Bulck</h3>
-            <p>Founder of Effective Animal Advocacy Netherlands; organizes events, gives career advice, and speaks at events about effective advocacy for animal welfare.</p>
-          </div>
-          <div class="card team-card">
-            <div class="photo-lg"></div>
-            <h3>Leon Borgdorf</h3>
-            <p>PhD researcher on the ethical and societal aspects of genetic modification of farmed animals; together with the Vegan Student Association, he launched a successful petition for plant-based coffee machines at Utrecht University; co-host of the podcast Lettuce Talk.</p>
-          </div>
-          <div class="card team-card">
-            <div class="photo-lg"></div>
-            <h3>Aiko Unterweger</h3>
-            <p>PhD researcher on greenwashing and humane-washing; active in national animal activism.</p>
-          </div>
-        </div>
-
-        <div style="height: 24px;"></div>
-
-        <h3 style="margin-bottom: 14px;">Partners</h3>
-        <div class="partner-grid">
-          <div class="partner-logo partner-logo-image partner-logo-ea">
-            <img src="images/EA.logo.jfif" alt="EA logo">
-          </div>
-          <div class="partner-logo partner-logo-image">
-            <img src="images/PlantX-logo-ZWART.png" alt="Studio Plantaardig logo placeholder">
-          </div>
-          <div class="partner-logo partner-logo-image partner-logo-vsa">
-            <img src="images/VSA-Utrecht.png" alt="Vegan Student Association logo placeholder">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <h2 class="section-title">FAQ</h2>
-
-        <div class="faq-item">
-          <h3>Who is this event for?</h3>
-          <p>Careers for Animals is for students, recent graduates, early-career professionals, and career changers who want to help animals through their careers or serious volunteering.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Do I need prior experience in animal advocacy or the protein transition?</h3>
-          <p>No. The event is designed both for people exploring this path for the first time and for those who already care deeply about these issues but want more clarity on how to act effectively.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>What can I expect from the programme?</h3>
-          <p>The programme is expected to include a keynote, around eight shorter talks, office hours with speakers, a workshop to turn ideas into concrete next steps, and a closing networking drink.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Where will the event take place?</h3>
-          <p>The event will take place at De zalen van Zeven, Boothstraat 7, 3512 BT Utrecht, the Netherlands, and will be held in person.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>What language will the event be in?</h3>
-          <p>English. This makes the event accessible to international students, professionals, and speakers.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>How much do tickets cost?</h3>
-          <p>Tickets are planned to remain accessible: €10 for students and €20 for professionals.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Will there be networking?</h3>
-          <p>Yes. Connecting attendees with like-minded peers and professionals in the field is a central part of the event, including through office hours and the closing networking drink.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>How do I register?</h3>
-          <p>Use the Register now button to access the registration form or Eventbrite page once ticketing is live.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      Careers for Animals · Utrecht · In person · Built for ambitious people who want to create meaningful impact for animals.
     </div>
-  </footer>
+
+    <p style="margin-top: 2rem; font-size: 1rem; color: var(--muted); line-height: 1.7;">By the end of the afternoon, you will have a clearer picture of the roles and careers that can help animals and accelerate the protein transition, along with concrete next steps toward a career that makes a real difference.</p>
+  </div>
+</section>
+
+<!-- PHOTO PAIR -->
+<div class="photo-pair" style="display: flex; gap: 0; max-height: 340px; overflow: hidden;">
+  <img
+    src="https://i.imgur.com/vqEsCC2.jpg"
+    alt="Careers for Animals"
+    style="width: 50%; object-fit: cover;" />
+  <img
+    src="https://i.imgur.com/icjEhe0.jpg"
+    alt="Careers for Animals"
+    style="width: 50%; object-fit: cover;" />
+</div>
+
+<!-- MODAL OVERLAY -->
+<div id="speaker-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; align-items:center; justify-content:center; padding:1rem;">
+  <div style="background:#fff; border-radius:12px; max-width:480px; width:100%; padding:2rem; position:relative; max-height:90vh; overflow-y:auto;">
+    <button onclick="closeModal()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#555;">&times;</button>
+    <div id="modal-photo-wrap" style="margin-bottom:1rem;"></div>
+    <div id="modal-track" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#2d6a4f; margin-bottom:0.25rem;"></div>
+    <div id="modal-name" style="font-size:1.4rem; font-weight:800; margin-bottom:0.15rem;"></div>
+    <div id="modal-title" style="font-size:0.92rem; color:#555; margin-bottom:1rem;"></div>
+    <div id="modal-bio" style="font-size:0.93rem; color:#333; line-height:1.65;"></div>
+  </div>
+</div>
+
+<!-- SPEAKERS -->
+<section id="speakers">
+  <div class="inner">
+    <h2>Speakers</h2>
+    <p class="section-lead">Speakers from across the animal advocacy and food system landscape. Click any card to learn more.</p>
+
+    <div class="speaker-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+
+      <!-- Lauren Mee — keynote, full card, not a popup -->
+      <div class="speaker-card" style="border-color: var(--green-light); border-width: 2px; cursor:pointer;" onclick="openModal('Lauren Mee','Keynote speaker','Founder and CEO, Animal Advocacy Careers and Impactful Policy Careers','Lauren is the Founder and CEO of Animal Advocacy Careers and Impactful Policy Careers, the former incubated by the Ambitious Impact incubator in 2019. She founded AAC after years of trying to find a job that matched her skills, experience, and ambition for impact, and now spends her time helping hundreds of others find opportunities where their skills can help the most animals. Before AAC, she worked as a consultant at a global data intelligence company, helping FMCG businesses make data-informed decisions and building bespoke market entry and expansion projects. She also serves on the boards of The Mission Motor, Consultants for Impact, and The Animal Law Foundation.','https://i.imgur.com/yh0dI1g.jpg')">
+        <div class="speaker-photo-wrap">
+          <img src="https://i.imgur.com/yh0dI1g.jpg" alt="Lauren Mee" class="speaker-photo" />
+        </div>
+        <div class="speaker-track">Keynote</div>
+        <div class="speaker-name">Lauren Mee</div>
+        <div class="speaker-desc">Founder and CEO of Animal Advocacy Careers, matching talent to high-impact roles for animals.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Thijs Jacobs -->
+      <div class="speaker-card clickable" onclick="openModal('Thijs Jacobs','Effective giving','Data analyst and policy advisor, Dutch Ministry of Education','Thijs is a data analyst and policy advisor at the Dutch Ministry of Education, where he focuses on teacher shortages. He has a background in mathematics and previously worked as a non-profit strategy consultant. He recently completed a research fellowship on animal welfare and global health charity evaluation at Ambitious Impact, and has organised for the Dutch Effective Altruism policy community. During his studies, his path took in grassroots climate activism, NGO volunteering, and plenty of hitchhiking.','https://i.imgur.com/vNNRDo3.jpg')">
+        <div class="speaker-photo-wrap">
+          <img src="https://i.imgur.com/vNNRDo3.jpg" alt="Thijs Jacobs" class="speaker-photo" />
+        </div>
+        <div class="speaker-track">Effective giving</div>
+        <div class="speaker-name">Thijs Jacobs</div>
+        <div class="speaker-desc">Data analyst and policy advisor at the Dutch Ministry of Education, with a background in charity evaluation.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Speaker 2 -->
+      <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Policy and public affairs','To be announced','This speaker works at the intersection of government, public affairs, and large-scale food sector change. More details coming soon.','')">
+        <div class="speaker-photo-wrap">
+          <div class="speaker-photo-placeholder">?</div>
+        </div>
+        <div class="speaker-track">Policy and public affairs</div>
+        <div class="speaker-name">To be announced</div>
+        <div class="speaker-desc">Working in government or public affairs to accelerate the food transition.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Speaker 3 -->
+      <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Research and innovation','To be announced','This speaker works in alternative proteins, animal-free testing, or food system research. More details coming soon.','')">
+        <div class="speaker-photo-wrap">
+          <div class="speaker-photo-placeholder">?</div>
+        </div>
+        <div class="speaker-track">Research and innovation</div>
+        <div class="speaker-name">To be announced</div>
+        <div class="speaker-desc">Driving science and innovation in alternative proteins and animal-free research.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Speaker 4 -->
+      <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Corporate engagement','To be announced','This speaker works with supermarkets, foodservice, and industry to shift defaults at scale. More details coming soon.','')">
+        <div class="speaker-photo-wrap">
+          <div class="speaker-photo-placeholder">?</div>
+        </div>
+        <div class="speaker-track">Corporate engagement</div>
+        <div class="speaker-name">To be announced</div>
+        <div class="speaker-desc">Shifting food defaults in supermarkets and foodservice at scale.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Speaker 5 -->
+      <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Entrepreneurship','To be announced','This speaker founded or built a venture in the food transition space. More details coming soon.','')">
+        <div class="speaker-photo-wrap">
+          <div class="speaker-photo-placeholder">?</div>
+        </div>
+        <div class="speaker-track">Entrepreneurship</div>
+        <div class="speaker-name">To be announced</div>
+        <div class="speaker-desc">Founded or built a venture to accelerate the plant-based transition.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Speaker 6 -->
+      <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Communications','To be announced','This speaker works in campaigns, advocacy, and changing hearts and minds at scale. More details coming soon.','')">
+        <div class="speaker-photo-wrap">
+          <div class="speaker-photo-placeholder">?</div>
+        </div>
+        <div class="speaker-track">Communications</div>
+        <div class="speaker-name">To be announced</div>
+        <div class="speaker-desc">Running campaigns and advocacy to shift public opinion on animal welfare.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+      <!-- Speaker 7 -->
+      <div class="speaker-card tba clickable" onclick="openModal('Speaker TBA','Volunteering','To be announced','This speaker demonstrates how to create meaningful impact for animals outside of a paid role. More details coming soon.','')">
+        <div class="speaker-photo-wrap">
+          <div class="speaker-photo-placeholder">?</div>
+        </div>
+        <div class="speaker-track">Volunteering</div>
+        <div class="speaker-name">To be announced</div>
+        <div class="speaker-desc">Creating meaningful impact for animals outside of a paid role.</div>
+        <div class="speaker-more">Read more</div>
+      </div>
+
+    </div>
+
+    <p style="color: var(--muted); font-size: 0.92rem; margin-top: 1.5rem;">More speakers will be announced in the coming weeks.</p>
+  </div>
+</section>
+
+<!-- WHY ATTEND -->
+<section id="why">
+  <div class="inner">
+    <h2>Who should attend</h2>
+    <p class="section-lead">This event is for anyone who cares about helping animals and accelerating the food transition, and wants to take real action to change the system.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Students and recent graduates</h3>
+        <p>Not sure what to do with your degree? We help you see which career paths have the most impact for animals, and which skills and backgrounds the field actually needs.</p>
+      </div>
+      <div class="card">
+        <h3>Career changers</h3>
+        <p>Already working, but want to do more for animals and the food system? We help you think through how to put the skills you already have to work for animals.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .speaker-photo-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 0.75rem;
+  }
+  .speaker-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .speaker-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #e8f4ee;
+    border: 2px dashed #b7ddc8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #aaa;
+  }
+  .speaker-card {
+    text-align: center;
+    cursor: default;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .speaker-card.clickable, .speaker-card[onclick] {
+    cursor: pointer;
+  }
+  .speaker-card[onclick]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  .speaker-more {
+    font-size: 0.78rem;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+  }
+  #speaker-modal.open {
+    display: flex !important;
+  }
+</style>
+
+<script>
+  function openModal(name, track, title, bio, photoUrl) {
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-track').textContent = track;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-bio').textContent = bio;
+    const photoWrap = document.getElementById('modal-photo-wrap');
+    if (photoUrl && photoUrl !== 'LAUREN_PHOTO_URL') {
+      photoWrap.innerHTML = '<img src="' + photoUrl + '" alt="' + name + '" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid #52b788;" />';
+    } else {
+      photoWrap.innerHTML = '<div style="width:100px;height:100px;border-radius:50%;background:#e8f4ee;border:3px dashed #b7ddc8;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#aaa;">📷</div>';
+    }
+    const modal = document.getElementById('speaker-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('speaker-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('speaker-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+
+<!-- REGISTER CTA -->
+<section id="register">
+  <div class="inner">
+    <h2>Ready to join us?</h2>
+    <p>Spots are limited. Join us in Utrecht on October 10 and spend the afternoon discovering how your career can make a real difference for animals.</p>
+    <a class="btn-primary" href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener">Register on Eventbrite</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="inner">
+    <h2>FAQ</h2>
+    <p class="section-lead">Everything you need to know before you register.</p>
+
+    <details open>
+      <summary>Who is this event for?</summary>
+      <p>Students, recent graduates, early-career professionals, and career changers who already care about animals and the food system and want to think seriously about how their working life can create more impact. Whether you are exploring this for the first time or already in the field and looking for direction, you are welcome.</p>
+    </details>
+
+    <details>
+      <summary>Do I need prior experience in animal advocacy?</summary>
+      <p>No. The event is designed both for people exploring this path for the first time and for those who already care deeply but want more clarity on how to act on it effectively.</p>
+    </details>
+
+    <details>
+      <summary>Where will the event take place?</summary>
+      <p>De Zalen van Zeven, Boothstraat 7, 3512 BT Utrecht. The event is fully in-person.</p>
+    </details>
+
+    <details>
+      <summary>What language will the event be in?</summary>
+      <p>English, to make the event accessible to international students, professionals, and speakers.</p>
+    </details>
+
+    <details>
+      <summary>How much do tickets cost?</summary>
+      <p>€10 for students and €20 for professionals. If the ticket price is a barrier, reach out via the contact form explaining your situation and we will gladly provide a free ticket.</p>
+    </details>
+
+    <details>
+      <summary>How do I register?</summary>
+      <p>Click the <a href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener" style="color: var(--green);">Register now button</a> to go directly to Eventbrite and complete your registration.</p>
+    </details>
+
+    <details>
+      <summary>I have accessibility requirements. What should I do?</summary>
+      <p>Reach out via the contact form below or email us directly, and we will do our best to accommodate you.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <h2>Contact</h2>
+    <p class="section-lead">Questions, speaker suggestions, partnership inquiries, or accessibility requests? We would love to hear from you.</p>
+
+    <form action="https://formspree.io/f/mqevplyw" method="POST">
+      <input type="hidden" name="_subject" value="New Careers for Animals contact form submission" />
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject" />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+
+      <button type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="inner">
+    <h2>Organisation team</h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Claudia Schenk" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <div class="team-name">Claudia Schenk</div>
+        <div class="team-bio">Event manager with a background in sustainable agriculture.</div>
+      </div>
+      <div class="team-card">
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Lotte de Lint" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <div class="team-name">Lotte de Lint</div>
+        <div class="team-bio">Fund manager for animal welfare and food transition at Doneer Effectief; PhD researcher on plant-based eating behaviour; co-founder EA student group Maastricht.</div>
+      </div>
+      <div class="team-card">
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Ruben van den Bulck" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <div class="team-name">Ruben van den Bulck</div>
+        <div class="team-bio">Founder of Effective Animal Advocacy Netherlands; event organiser and speaker on effective animal advocacy.</div>
+      </div>
+      <div class="team-card">
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Leon Borgdorf" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <div class="team-name">Leon Borgdorf</div>
+        <div class="team-bio">PhD researcher on ethics and genetic modification of farmed animals; co-host of the podcast Lettuce Talk; co-founder of the plant-based coffee petition at Utrecht University.</div>
+      </div>
+      <div class="team-card">
+        <img src="https://i.imgur.com/vqEsCC2.jpg" alt="Aiko Unterweger" style="width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 0.75rem;" />
+        <div class="team-name">Aiko Unterweger</div>
+        <div class="team-bio">PhD researcher on greenwashing and humane-washing; active in national animal activism.</div>
+      </div>
+    </div>
+
+    <p class="partners-label">Partners</p>
+    <div class="partners">
+      <img src="https://claudiacoding.github.io/Careers-for-Animals-website/images/EA.logo.jfif" alt="Effective Altruism Netherlands" />
+      <img src="https://claudiacoding.github.io/Careers-for-Animals-website/images/PlantX-logo-ZWART.png" alt="Studio Plantaardig" />
+      <img src="https://claudiacoding.github.io/Careers-for-Animals-website/images/VSA-Utrecht.png" alt="Vegan Student Association Utrecht" />
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Careers for Animals · Utrecht · October 10, 2026 · <a href="https://www.eventbrite.com/e/careers-for-animals-tickets-1992357094703?aff=oddtdtcreator&keep_tld=true" target="_blank" rel="noopener">Register on Eventbrite</a></p>
+</footer>
+
 </body>
 </html>
